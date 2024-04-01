@@ -1,0 +1,31 @@
+<div class="body">
+  <div>
+    <h2>CRUD Operation :</h2>
+
+    <!-- Create -->
+    <div ngClass="box">
+      <h3>Add Details :</h3>
+      <input type="text" [(ngModel)]="newItem.name" placeholder="FirstName">
+      <input type="text" [(ngModel)]="newItem.description" placeholder="LastName">
+      <input type="number" [(ngModel)]="newItem.number" placeholder="Phone Number">
+
+      <button (click)="createItem()">Submit</button>
+    </div>
+
+    <!-- Read -->
+    <div *ngFor="let item of items" class="action">
+      <span>{{ item.name }}</span> <span>{{ item.description }} </span> <span>{{item.number}}</span>
+      <button (click)="selectedItem = item">Edit</button>
+      <button (click)="deleteItem(item.id)">Delete</button>
+    </div>
+
+    <!-- Update -->
+    <div *ngIf="selectedItem.id" ngClass="box">
+      <h3>Edit Details :</h3>
+      <input type="text" [(ngModel)]="selectedItem.name" placeholder="Name">
+      <input type="text" [(ngModel)]="selectedItem.description" placeholder="Description">
+      <input type="number" [(ngModel)]="selectedItem.number" placeholder="Phone Number">
+      <button (click)="updateItem()">Update</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div ngClass="body">
+
+<table class="action" >
+    <thead>
+        <!-- Table headers -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of tableData">
+            <!-- Display table rows with item details -->
+            <td>{{ item.name }}</td>
+            <td>{{ item.email}}</td>
+            <td>{{ item.phonenumber}}</td>
+            <td>{{ item.gender }}</td>
+            <td>{{ item.language }}</td>
+            <td>
+                <button (click)="editItem(item.id)">Edit</button> <!-- Edit button -->
+                <button (click)="deleteItem(item.id)">Delete</button> <!-- Delete button -->
+            </td>
+        </tr>
+    </tbody>
+</table></div>
